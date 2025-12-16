@@ -1,19 +1,11 @@
 function login() {
-  const pass = document.getElementById("password").value;
+  var pass = document.getElementById("password").value;
+  var error = document.getElementById("error");
+
   if (pass === "love") {
-    goTo(2);
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
   } else {
-    document.getElementById("error").innerText = "كلمة السر غلط";
+    error.innerText = "كلمة السر غلط";
   }
-}
-
-function goTo(page) {
-  for (let i = 1; i <= 6; i++) {
-    document.getElementById("page" + i).classList.add("hidden");
-  }
-  document.getElementById("page" + page).classList.remove("hidden");
-}
-
-function restart() {
-  location.reload();
 }
